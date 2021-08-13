@@ -7,9 +7,9 @@ int main() {
   scanf("%i", &N);
 
   printf("Enter the elements of the array\n");
-  int i = 0;
   int prev=0, curr=0;
   scanf("%i", &curr);
+  int i = 1;
   while (i < N) {
     prev = curr;
     scanf("%i", &curr);
