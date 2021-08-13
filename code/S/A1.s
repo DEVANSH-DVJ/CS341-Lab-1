@@ -63,8 +63,8 @@ first:
 
 cond:
     # if (i < N) goto loop;
-    slt $t0 $s2 $s1
-    bgtz $t0 loop
+    slt $t0 $s2 $s1 # t0 is 1 if i < N
+    bnez $t0 loop # goto loop if t0 is 1
     jr $ra
 
 loop:
