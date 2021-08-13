@@ -22,6 +22,7 @@ end_string:
 main:
     jal init
     jal start
+    jal first
     jal end
 
 init:
@@ -44,6 +45,19 @@ start:
     li $v0 5
     syscall
     move $s1 $v0
+    jr $ra
+
+first:
+    # printf("Enter the elements of the array\n");
+    li $v0, 4
+    la $a0, elements_string
+    syscall
+
+    # scanf("%i", &curr);
+    li $v0 5
+    syscall
+    move $s4 $v0
+    jr $ra
 
 end:
     # printf("%i\n", length);
