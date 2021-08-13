@@ -102,12 +102,12 @@ pgc:
     j next
 
 incrlen:
-    addiu $s7 1
+    addiu $s7 $s7 1
     j next
 
 next:
     # ++i;
-    addiu $s2 1
+    addiu $s2 $s2 1
     j cond
 
 end:
