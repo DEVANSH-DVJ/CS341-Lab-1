@@ -87,6 +87,18 @@ loop:
     # prev > curr (pgc)
     beqz $t0 pgc # pgc if t0 is 0
 
+peqc:
+    li $s6 0
+    j next
+
+plc:
+    li $s6 1
+    j next
+
+pgc:
+    li $s6 -1
+    j next
+
 next:
     # ++i;
     addiu $s2 1
