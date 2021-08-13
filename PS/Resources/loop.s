@@ -23,7 +23,6 @@ LOOP:
     addi $t0, $t0,4
     bne $t0, $s0, LOOP
 
-
 ##################Exiting#################
 EXIT:
 	li $v0 10# exit

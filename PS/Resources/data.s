@@ -20,7 +20,6 @@ string_asciiz:
 .text
 
 main:
-
 	# la $s0 word_ds
 	# lw $t0 0($s0)
 	# lw $t1 4($s0)
@@ -36,7 +35,6 @@ main:
 	li $v0 4
 	la $a0 string_ascii
 	syscall
-
 
 ##################Exiting#################
 	li $v0 10 # exit
