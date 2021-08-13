@@ -21,20 +21,16 @@ int main() {
     if (prev == curr) {
       curr_sign = 0;
       goto end;
+    }
+
+    if (curr > prev) {
+      curr_sign = 1;
     } else {
+      curr_sign = -1;
+    }
 
-      if (curr > prev) {
-        curr_sign = 1;
-      } else {
-        curr_sign = -1;
-      }
-
-      if (curr_sign == prev_sign) {
-        goto end;
-      } else {
-        ++length;
-        goto end;
-      }
+    if (curr_sign != prev_sign) {
+      ++length;
     }
 
   end:
