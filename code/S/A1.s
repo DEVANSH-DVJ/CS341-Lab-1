@@ -55,10 +55,10 @@ first:
     la $a0, elements_string
     syscall
 
-    # scanf("%i", &curr);
+    # scanf("%i", &prev);
     li $v0 5
     syscall
-    move $s4 $v0
+    move $s3 $v0
     jr $ra
 
 cond:
@@ -68,11 +68,6 @@ cond:
     jr $ra
 
 loop:
-    # prev = curr;
-    move $s3 $s4
-    # prev_sign = curr_sign;
-    move $s5 $s6
-
     # scanf("%i", &curr);
     li $v0 5
     syscall
@@ -107,11 +102,15 @@ pgc:
     j next
 
 incrlen:
+    # prev_sign = curr_sign;
+    move $s5 $s6
     # ++length;
     addiu $s7 $s7 1
     j next
 
 next:
+    # prev = curr;
+    move $s3 $s4
     # ++i;
     addiu $s2 $s2 1
     j cond
