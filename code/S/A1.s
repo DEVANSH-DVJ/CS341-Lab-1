@@ -21,6 +21,7 @@ end_string:
 
 main:
     jal init
+    jal start
     jal end
 
 init:
@@ -32,6 +33,17 @@ init:
     li $s6 0
     li $s7 1
     jr $ra
+
+start:
+    # printf("Enter the size of the array\n");
+    li $v0, 4
+    la $a0, size_string
+    syscall
+
+    # scanf("%i", &N);
+    li $v0 5
+    syscall
+    move $s1 $v0
 
 end:
     # printf("%i\n", length);
