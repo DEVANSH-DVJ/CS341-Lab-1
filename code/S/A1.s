@@ -1,4 +1,7 @@
 # Length of longest zigzag subsequence
+# Complexity: O(n)
+# Space constraints: O(1)
+
 .data
 
 size_string:
