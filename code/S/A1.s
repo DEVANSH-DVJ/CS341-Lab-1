@@ -9,6 +9,7 @@ elements_string:
 
 end_string:
     .asciiz "\n"
+
 .text
 
 # $s1 -> N
@@ -23,6 +24,7 @@ main:
     jal init
     jal start
     jal first
+    jal cond
     jal end
 
 init:
@@ -58,6 +60,14 @@ first:
     syscall
     move $s4 $v0
     jr $ra
+
+cond:
+    # if (i < N) goto loop;
+    slt $t0 $s2 $s1
+    bgtz $t0 loop
+    jr $ra
+
+loop:
 
 end:
     # printf("%i\n", length);
