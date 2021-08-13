@@ -35,7 +35,7 @@ loop:
     goto next;
   }
 
-  if (curr > prev) {
+  if (prev < curr) {
     curr_sign = 1;
   } else {
     curr_sign = -1;
