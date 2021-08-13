@@ -9,7 +9,9 @@ int main() {
 start:
   printf("Enter the size of the array\n");
   scanf("%i", &N);
+  goto first;
 
+first:
   printf("Enter the elements of the array\n");
   scanf("%i", &curr);
 
