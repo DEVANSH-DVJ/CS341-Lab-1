@@ -37,11 +37,15 @@ loop:
 
   if (prev < curr) {
     curr_sign = 1;
-    length += (curr_sign != prev_sign);
+    if (curr_sign != prev_sign) {
+      ++length;
+    }
     goto next;
   } else {
     curr_sign = -1;
-    length += (curr_sign != prev_sign);
+    if (curr_sign != prev_sign) {
+      ++length;
+    }
     goto next;
   }
 
