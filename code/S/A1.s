@@ -68,6 +68,16 @@ cond:
     jr $ra
 
 loop:
+    # prev = curr;
+    move $s3 $s4
+    # prev_sign = curr_sign;
+    move $s5 $s6
+
+    # scanf("%i", &curr);
+    li $v0 5
+    syscall
+    move $s4 $v0
+
 
 end:
     # printf("%i\n", length);
