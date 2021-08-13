@@ -13,7 +13,7 @@ start:
 
 first:
   printf("Enter the elements of the array\n");
-  scanf("%i", &curr);
+  scanf("%i", &prev);
 
   goto cond;
 
@@ -25,9 +25,6 @@ cond:
   }
 
 loop:
-  prev = curr;
-  prev_sign = curr_sign;
-
   scanf("%i", &curr);
 
   if (prev == curr) {
@@ -38,18 +35,21 @@ loop:
   if (prev < curr) {
     curr_sign = 1;
     if (curr_sign != prev_sign) {
+      prev_sign = curr_sign;
       ++length;
     }
     goto next;
   } else {
     curr_sign = -1;
     if (curr_sign != prev_sign) {
+      prev_sign = curr_sign;
       ++length;
     }
     goto next;
   }
 
 next:
+  prev = curr;
   ++i;
   goto cond;
 
