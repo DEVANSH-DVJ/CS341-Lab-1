@@ -77,7 +77,15 @@ loop:
     li $v0 5
     syscall
     move $s4 $v0
-    j next
+
+    # prev == curr (peqc)
+    beq $s3 $s4 peqc
+
+    slt $t0 $s3 $s4 # t0 is 1 if prev < curr
+    # prev < curr (plc)
+    bnez $t0 plc # plc if t0 is 1
+    # prev > curr (pgc)
+    beqz $t0 pgc # pgc if t0 is 0
 
 next:
     # ++i;
