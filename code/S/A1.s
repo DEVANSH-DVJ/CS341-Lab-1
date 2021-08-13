@@ -93,10 +93,16 @@ peqc:
 
 plc:
     li $s6 1
+    bne $s5 $s6 incrlen
     j next
 
 pgc:
     li $s6 -1
+    bne $s5 $s6 incrlen
+    j next
+
+incrlen:
+    addiu $s7 1
     j next
 
 next:
