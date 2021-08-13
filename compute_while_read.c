@@ -20,8 +20,7 @@ int main() {
 
     if (prev == curr) {
       curr_sign = 0;
-      ++i;
-      continue;
+      goto end;
     } else {
 
       if (curr > prev) {
@@ -31,14 +30,15 @@ int main() {
       }
 
       if (curr_sign == prev_sign) {
-        ++i;
-        continue;
+        goto end;
       } else {
         ++length;
-        ++i;
-        continue;
+        goto end;
       }
     }
+
+  end:
+    ++i;
   }
 
   printf("%i\n", length);
