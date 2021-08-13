@@ -88,20 +88,26 @@ loop:
     beqz $t0 pgc # pgc if t0 is 0
 
 peqc:
+    # curr_sign = 0;
     li $s6 0
     j next
 
 plc:
+    # curr_sign = 1;
     li $s6 1
+    # if (curr_sign != prev_sign) goto incrlen;
     bne $s5 $s6 incrlen
     j next
 
 pgc:
+    # curr_sign = -1;
     li $s6 -1
+    # if (curr_sign != prev_sign) goto incrlen;
     bne $s5 $s6 incrlen
     j next
 
 incrlen:
+    # ++length;
     addiu $s7 $s7 1
     j next
 
