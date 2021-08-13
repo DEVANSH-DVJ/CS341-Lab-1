@@ -20,4 +20,14 @@ end_string:
 # $s7 -> length
 
 main:
+    jal init
+
+init:
+    li $s1 0
+    li $s2 1
+    li $s3 0
+    li $s4 0
+    li $s5 0
+    li $s6 0
+    li $s7 1
     jr $ra
