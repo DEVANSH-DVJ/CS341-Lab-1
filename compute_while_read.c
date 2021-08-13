@@ -8,9 +8,11 @@ int main() {
 
   printf("Enter the elements of the array\n");
   int i = 0;
-  int arr[N];
+  int prev=0, curr=0;
+  scanf("%i", &curr);
   while (i < N) {
-    scanf("%i", arr + i);
+    prev = curr;
+    scanf("%i", &curr);
     i++;
   }
 
