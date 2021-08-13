@@ -77,7 +77,12 @@ loop:
     li $v0 5
     syscall
     move $s4 $v0
+    j next
 
+next:
+    # ++i;
+    addiu $s2 1
+    j cond
 
 end:
     # printf("%i\n", length);
