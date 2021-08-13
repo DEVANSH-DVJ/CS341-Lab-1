@@ -8,9 +8,9 @@ main:
 	li $t1, 0x8fffffff
     li $t2, 0x80000001
 
-    # add $t3, $t1, $t2 
+    # add $t3, $t1, $t2
 
 ################No overflow trap since we used the addu instruction##############
 
-    addu $t3, $t1, $t2    
+    addu $t3, $t1, $t2
     jr $ra

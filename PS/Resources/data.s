@@ -8,7 +8,7 @@ half_ds:
 	.half 2 3 5 6 1 2 3
 
 byte_ds:
-	.byte 1 2 3 4 
+	.byte 1 2 3 4
 
 string_ascii:
 	.ascii "This is not null terminated"
@@ -41,4 +41,3 @@ main:
 ##################Exiting#################
 	li $v0 10 # exit
 	syscall
-

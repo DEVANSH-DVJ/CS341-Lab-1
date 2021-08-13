@@ -2,10 +2,9 @@
 .text
 
 main:
-	
 	li $t0 0x0
 	li $t1 0x0
-	
+
 	beq $t0 $0 NOT_EQUAL
 
 NOT_EQUAL:
@@ -15,14 +14,10 @@ NOT_EQUAL:
 
 
 EQUAL:
-	
 	li $t1 1
 
 
 ##################Exiting#################
 EXIT:
-
 	li $v0 10# exit
 	syscall
-
-

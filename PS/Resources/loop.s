@@ -1,5 +1,5 @@
 # This example shows the use of loops.
-.data 
+.data
 
 array:
     .space 20 #5 element array
@@ -11,13 +11,12 @@ prompt:
 
 main:
 	li $t0, 0 # equivalent to setting i=0
-    li $s0, 20 
+    li $s0, 20
     li $v0, 4 #print string
     la $a0, prompt
     syscall
 
 LOOP:
-
 	li $v0 5 #read int
     syscall
     sw $v0, array($t0) #store int in array
@@ -27,8 +26,5 @@ LOOP:
 
 ##################Exiting#################
 EXIT:
-
 	li $v0 10# exit
 	syscall
-
-
