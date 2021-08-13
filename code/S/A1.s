@@ -21,6 +21,7 @@ end_string:
 
 main:
     jal init
+    jal end
 
 init:
     li $s1 0
@@ -31,3 +32,17 @@ init:
     li $s6 0
     li $s7 1
     jr $ra
+
+end:
+    # printf("%i\n", length);
+    li $v0 1
+    move $a0 $s7
+    syscall
+
+    li $v0, 4
+    la $a0, end_string
+    syscall
+
+    # return 0;
+    li $v0 10
+    syscall
